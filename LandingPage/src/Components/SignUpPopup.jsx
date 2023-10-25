@@ -8,6 +8,7 @@ import { lodge } from "../store/atoms/signUpPop";
 import { useRecoilState , useSetRecoilState } from "recoil";
 import { userState } from "../store/atoms/user";
 import axios from "axios";
+import {account} from "../Backend/appwriteConfig.js";
 
 export function SignUpPop()
 {
@@ -16,7 +17,6 @@ export function SignUpPop()
     const setUser = useSetRecoilState(userState);
     const [ email , setEmail] = useState("");
     const [ password , setPassword] = useState("");
-
     return (
         <>
             <div className="popUp">

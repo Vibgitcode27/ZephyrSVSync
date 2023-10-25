@@ -8,6 +8,7 @@ import { lodge } from "../store/atoms/signUpPop";
 import { useRecoilState , useSetRecoilState } from "recoil";
 import { userState } from "../store/atoms/user";
 import axios from "axios";
+import {account} from "../Backend/appwriteConfig.js";
 
 export function SignInPop()
 {
@@ -16,6 +17,32 @@ export function SignInPop()
     const setUser = useSetRecoilState(userState);
     const [ email , setEmail] = useState("");
     const [ password , setPassword] = useState("");
+
+    async function registerviaGoogle() {
+        try {
+            const res = await account.createOAuth2Session(
+                "google",
+                "http://localhost:5173/gsoc",
+                "http://localhost:5173/"
+            );
+            console.log(res);
+        } catch (error) {
+            console.error("Error registering via Google:", error);
+        }
+    }
+
+    async function registerviaGithub() {
+        try {
+            const res = await account.createOAuth2Session(
+                "github",
+                "http://localhost:5173/gsoc",
+                "http://localhost:5173/"
+            );
+            console.log(res);
+        } catch (error) {
+            console.error("Error registering via Github:", error);
+        }
+    }
 
     return (
         <>
@@ -123,11 +150,11 @@ export function SignInPop()
                             <div className="OAuth">
                                 <h2 style={{color : "#900800"}}>OAuth coming Soon</h2>
                                 <div style={{display : "flex"}}>
-                                <p >
-                                    <GitHubIcon/>
+                                <p>
+                                    <GitHubIcon onClick={registerviaGithub}/>
                                 </p>
                                 <p style={{marginLeft : "30px"}}>
-                                <GoogleIcon/>
+                                <GoogleIcon onClick={registerviaGoogle}/>
                                 </p>
                                 </div>
                             </div>
