@@ -17,13 +17,18 @@ body{
   margin: 0;
   /* background-image: url("C:\Users\vibgi\OneDrive\Desktop\MLH_WorkFlow\src\assets\Untitled design.png"); */
   background-color: #050211;
+  overflow-x: hidden;
 }
+
+
 
 .navbar
 {
+  width: 200vh;
   display: flex;
   justify-content: space-around;
   margin: 0px;
+  padding: 0px;
   margin-bottom: -4vh;
   border-bottom: 1px solid rgba(78, 77, 77, 0.242);
 }
@@ -63,8 +68,8 @@ body{
   color: white;
   margin-top: 3.5vh;
   margin-right: -20vh;
-  height: 50px;
-  width: 100px;
+  height: 6.5vh;
+  width: 12vh;
   border-radius: 8px;
 }
 
@@ -75,8 +80,8 @@ body{
   border-color: var(--buttonBackground);
   color: #000000;
   margin-top: 3.5vh;
-  height: 50px;
-  width: 160px;
+  height: 6.5vh;
+  width: 24vh;
   font-weight: 600;
   border-radius: 8px;
 }
@@ -160,6 +165,8 @@ body{
   font-size: 2.6vh;
   margin-top: -3vh;
   margin-left: 43vh;
+  z-index: 20 !important;
+  position: relative;
 }
 
 .textSlider
@@ -313,8 +320,7 @@ body{
 
 .threeD
 {
-  margin-top: -20vh;
-  z-index: -99;
+  margin-top: -15vh;
 }
 
 .button

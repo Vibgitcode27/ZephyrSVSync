@@ -1,4 +1,5 @@
 import "../App.css";
+import "../App2.css";
 import { useState , useEffect } from "react";
 import Spline from '@splinetool/react-spline';
 import { StaticNavBar } from "./Navbar";
