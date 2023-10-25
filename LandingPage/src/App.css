@@ -165,7 +165,7 @@ body{
   font-size: 2.6vh;
   margin-top: -3vh;
   margin-left: 43vh;
-  z-index: 20 !important;
+  z-index: 2 !important;
   position: relative;
 }
 
@@ -202,8 +202,8 @@ body{
   transform: translate(-50%, -50%);
   line-height: 1.4;
   background: var(--backgroundColor);
-  padding: 14px 28px;
-  border-radius: 15px;
+  padding: 2vh 5vh;
+  border-radius: 3vh;
   max-width: 2000px;
   min-width: 300px;
   z-index: 4;
@@ -233,8 +233,8 @@ body{
 
 .popUP-content-div1 > div > img
 {
-  height: 130px;
-  width: 140px;
+  height: 18vh;
+  width: 19vh;
   margin-left: 8vh;
   margin-top: 8vh;
   border-radius: 100%;
@@ -245,14 +245,14 @@ body{
   margin-left: 2vh;
   margin-top: 10vh;
   letter-spacing: 0.5vh;
-  font-size: 60px;
+  font-size: 10vh;
   color: white;
   font-family: 'Pixelify Sans', sans-serif;
 }
 
 .popUP-content-div1 > h2
 {
-    padding-top: 20px;
+    padding-top: 4vh;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: lighter;
@@ -261,7 +261,7 @@ body{
 .popUP-content-div1 > aside
 {
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 2vh;
 }
 
 .popUP-content-div1 > aside > p
