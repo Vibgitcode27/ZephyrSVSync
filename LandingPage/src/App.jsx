@@ -14,6 +14,8 @@ function App() {
                   {/* <ActiveUser/> */}
                     <Routes>
                         <Route path={"/"} element={<LandingPage/>}/>
+                        <Route path={"/"} element={<LandingPage/>}/>
+                        <Route path={"/"} element={<LandingPage/>}/>
                     </Routes>
                 </Router>
             </div>
