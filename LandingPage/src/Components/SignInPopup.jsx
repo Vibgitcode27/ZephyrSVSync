@@ -1,6 +1,8 @@
 import { useState } from "react"
 import "../App.css"
+import GoogleIcon from '@mui/icons-material/Google';
 import {TextField , Button} from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import { LogInPop } from "../store/atoms/LogInPop";
 import { lodge } from "../store/atoms/signUpPop";
 import { useRecoilState , useSetRecoilState } from "recoil";
@@ -120,6 +122,14 @@ export function SignInPop()
                             </div>
                             <div className="OAuth">
                                 <h2 style={{color : "#900800"}}>OAuth coming Soon</h2>
+                                <div style={{display : "flex"}}>
+                                <p >
+                                    <GitHubIcon/>
+                                </p>
+                                <p style={{marginLeft : "30px"}}>
+                                <GoogleIcon/>
+                                </p>
+                                </div>
                             </div>
                         </div>
                     </div>

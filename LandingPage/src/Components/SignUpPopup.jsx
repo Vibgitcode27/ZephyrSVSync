@@ -1,5 +1,7 @@
 import { useState } from "react"
 import "../App.css"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import GoogleIcon from '@mui/icons-material/Google';
 import {TextField , Button} from "@mui/material";
 import { LogInPop } from "../store/atoms/LogInPop";
 import { lodge } from "../store/atoms/signUpPop";
@@ -68,6 +70,14 @@ export function SignUpPop()
                                 setSignUpPopup(!signuppopup)
                             }}>SignUp</Button> 
                             </div>
+                            <div style={{display : "flex"}}>
+                                <p >
+                                    <GitHubIcon/>
+                                </p>
+                                <p style={{marginLeft : "30px"}}>
+                                <GoogleIcon/>
+                                </p>
+                                </div>
                         </div>
                     </div>
                 </div>
