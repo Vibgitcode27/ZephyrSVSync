@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LandingPage } from './Components/LandingPage';
 import { RecoilRoot, useSetRecoilState} from 'recoil';
 import axios from 'axios';
+import Gsoc from "./Components/Gsoc.jsx";
+import Trending from "./Components/Trending.jsx";
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
                 <Router>
                   {/* <ActiveUser/> */}
                     <Routes>
+                        <Route path={"/Gsoc"} element={<Gsoc/>}/>
+                        <Route path={"/Trending"} element={<Trending/>}/>
                         <Route path={"/"} element={<LandingPage/>}/>
                     </Routes>
                 </Router>

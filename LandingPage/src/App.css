@@ -2,7 +2,7 @@
 :root{
    --darkGray : #0F0F0F;
   /* --navyBlue : #010512; */
-  
+
   --backgroundColor : #08041b;
   /* --backgroundColor : #0F0F0F; */
   --neonButtonBackground : #09b399;
@@ -95,14 +95,14 @@ body{
 
 .hero
 {
-  font-size: 5vh; 
+  font-size: 5vh;
   font-family: 'Inter', sans-serif;
   color: var(--whiteText);
   padding-left: 40vh;
 }
 #text1
 {
-  font-size: 6vh; 
+  font-size: 6vh;
   width: 140vh;
   margin-left: 17vh;
   margin-bottom: -5vh;
@@ -156,7 +156,7 @@ body{
   background-color: var(--backgroundColor);
   font-size: 2vh;
   font-weight: 400;
-  color: white; 
+  color: white;
   padding: 1vh;
 }
 
