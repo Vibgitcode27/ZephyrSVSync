@@ -16,6 +16,7 @@
     "@octokit/core": "^5.0.1",
     "@splinetool/react-spline": "^2.2.6",
     "aos": "^2.3.4",
+    "appwrite": "^13.0.0",
     "axios": "^1.5.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
