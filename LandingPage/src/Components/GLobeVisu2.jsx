@@ -21,9 +21,14 @@ function GlobeComponent2() {
         const windowHalfY = window.innerHeight / 2;
 
         function init() {
+            // THIS is the best
+            const containerWidth = containerRef.current.clientWidth;
+            const containerHeight = containerRef.current.clientHeight;
+
+
             renderer = new THREE.WebGLRenderer({alpha : true});
             renderer.setPixelRatio(window.devicePixelRatio);
-            renderer.setSize(1200, 600);
+            renderer.setSize(containerWidth, containerHeight);
             containerRef.current.appendChild(renderer.domElement);  // Use ref to attach the renderer
 
             // ... (rest of the init code is same)
@@ -52,9 +57,10 @@ function GlobeComponent2() {
             camera.position.x = 0;
             camera.position.y = 0;
             scene.add(camera);
-        
             scene.fog = new THREE.Fog(0x535ef3, 400, 2000);
         
+            controls = new OrbitControls(camera, renderer.domElement);
+
             // EDITED
             const distance = camera.position.distanceTo(controls.target);
             controls.minDistance = distance;
@@ -64,8 +70,8 @@ function GlobeComponent2() {
             controls.enableDamping = true;
             controls.dynamicDampingFactor = 0.01;
             controls.enablePan = false;
-            controls.minDistance = 200;
-            controls.maxDistance = 500;
+            controls.minDistance = 160;
+            controls.maxDistance = 170;
             controls.rotateSpeed = 0.8;
             controls.autoRotate = false;
             controls.minPolarAngle = Math.PI / 3.5;
@@ -175,11 +181,11 @@ function GlobeComponent2() {
         }
 
         function onWindowResize() {
-            camera.aspect = 1200/600;
+            camera.aspect = containerWidth / containerHeight;
             camera.updateProjectionMatrix();
-            windowHalfX = window.innerWidth / 2;
-            windowHalfY = window.innerHeight / 2;
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            windowHalfX = containerWidth / 2;
+            windowHalfY = containerHeight / 2;
+            renderer.setSize(containerWidth, containerHeight);
         }
 
         function animate() {
