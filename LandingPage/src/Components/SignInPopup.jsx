@@ -158,7 +158,7 @@ export function SignInPop()
                                 <p style={{marginLeft : "30px"}}>
                                 <GoogleIcon onClick={registerviaGoogle}/>
                                 </p>
-                                    <Icon icon={bitbucketIcon} color="#08041b" />
+                                    <Icon icon={bitbucketIcon} color="#08041b"/>
                                 </div>
                             </div>
                         </div>
