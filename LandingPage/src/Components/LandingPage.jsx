@@ -6,13 +6,8 @@ import { StaticNavBar } from "./Navbar";
 import Button from '@mui/material/Button';
 import { lodge } from "../store/atoms/signUpPop";
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-
-// import GlobeComponent from "./GlobeVisualization";
 import { useRecoilState , useRecoilValue , useSetRecoilState} from "recoil";
+import GlobeComponent2 from "./GLobeVisu2";
 
 export function LandingPage() {
 
@@ -156,8 +151,10 @@ export function LandingPage() {
 <section className="openSourced">
     <h1>We're Open on GitHub!</h1>
     <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
-</section>
-
+    <div className="GitHubGLobe">
+        <GlobeComponent2/>
+    </div>
+</section>   
       </div>
     )
 }
