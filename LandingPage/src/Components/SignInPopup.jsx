@@ -3,6 +3,8 @@ import "../App.css"
 import GoogleIcon from '@mui/icons-material/Google';
 import {TextField , Button} from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { Icon } from '@iconify/react';
+import bitbucketIcon from '@iconify/icons-mdi/bitbucket';
 import { LogInPop } from "../store/atoms/LogInPop";
 import { lodge } from "../store/atoms/signUpPop";
 import { useRecoilState , useSetRecoilState } from "recoil";
@@ -156,6 +158,7 @@ export function SignInPop()
                                 <p style={{marginLeft : "30px"}}>
                                 <GoogleIcon onClick={registerviaGoogle}/>
                                 </p>
+                                    <Icon icon={bitbucketIcon} color="#08041b" />
                                 </div>
                             </div>
                         </div>
