@@ -65,11 +65,11 @@ export function LandingPage() {
         <section className="featured">
             <div className="opaque">
                 <h1>TOOLS</h1>
-                <p>Introducing our Toolkit: A curated suite of powerful utilities designed to streamline your GitHub experience, enhance productivity, and transform </p>
-                <p id="p2">the way you interact with repositories. Dive into tools that redefine simplicity and efficiency.</p>
+                <p>Introducing our Toolkit: A curated suite of powerful utilities designed to streamline your GitHub experience, enhance productivity, and </p>
+                <p id="p2">transform the way you interact with repositories. Dive into tools that redefine simplicity and efficiency.</p>
             </div>
-            <div class="ag-format-container">
-                <div class="ag-courses_box">
+            <div className="ag-format-container">
+                <div className="ag-courses_box">
                     
                     
                     <div className="ag-courses_item">
@@ -91,19 +91,20 @@ export function LandingPage() {
                     </a>
                     </div>
                       
+
                     <div className="ag-courses_item">
                     <a href="#" className="ag-courses-item_link">
                     <div className="ag-courses-item_bg"></div>
 
                     <div className="ag-courses-item_title">
-                    README Generator
+                    GSOC Projects Hub
                     </div>
 
                     <div className="ag-courses-item_date-box">
                     <span className="ag-courses-item_date">
                     <ul>
-                        <li>Say goodbye to bland READMEs</li>
-                        <li>Interactive templates to showcase your projects like a pro.</li>
+                        <li>Discover the most exciting GSOC projects.</li>
+                        <li>Filter by organizations or tech stack and find your perfect match.</li>
                     </ul>
                     </span>
                     </div>
@@ -115,14 +116,14 @@ export function LandingPage() {
                     <div className="ag-courses-item_bg"></div>
 
                     <div className="ag-courses-item_title">
-                    README Generator
+                    Personalized Dashboard
                     </div>
 
                     <div className="ag-courses-item_date-box">
                     <span className="ag-courses-item_date">
                     <ul>
-                        <li>Say goodbye to bland READMEs</li>
-                        <li>Interactive templates to showcase your projects like a pro.</li>
+                        <li>All your GitHub data visualized.</li>
+                        <li>Track your contributions, pull requests, and more in a sleek interface.</li>
                     </ul>
                     </span>
                     </div>
@@ -134,14 +135,14 @@ export function LandingPage() {
                     <div className="ag-courses-item_bg"></div>
 
                     <div className="ag-courses-item_title">
-                    README Generator
+                    Trending Repos
                     </div>
 
                     <div className="ag-courses-item_date-box">
                     <span className="ag-courses-item_date">
                     <ul>
-                        <li>Say goodbye to bland READMEs</li>
-                        <li>Interactive templates to showcase your projects like a pro.</li>
+                        <li>Stay updated with the hottest repositories on GitHub.</li>
+                        <li>Customize your feed based on languages or tags of interest.</li>
                     </ul>
                     </span>
                     </div>
@@ -150,11 +151,13 @@ export function LandingPage() {
 
             </div>
         </div>
-                    
-                 {/* </div>
-            </div> */}
-        </section> 
-        
+</section> 
+
+<section className="openSourced">
+    <h1>We're Open on GitHub!</h1>
+    <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
+</section>
+
       </div>
     )
 }
