@@ -6,6 +6,8 @@ import { RecoilRoot, useSetRecoilState} from 'recoil';
 import axios from 'axios';
 import Gsoc from "./Components/Gsoc.jsx";
 import Trending from "./Components/Trending.jsx";
+import DataFill from "./Components/DataFill.jsx";
+import Dashboard from "./Components/Dashboard.jsx";
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
                         <Route path={"/Gsoc"} element={<Gsoc/>}/>
                         <Route path={"/Trending"} element={<Trending/>}/>
                         <Route path={"/"} element={<LandingPage/>}/>
+                        <Route path={"/DataFill"} element={<DataFill/>}/>
+                        <Route path={"/dashboard"} element={<Dashboard/>}/>
                     </Routes>
                 </Router>
             </div>
