@@ -70,8 +70,8 @@ function GlobeComponent2() {
             controls.enableDamping = true;
             controls.dynamicDampingFactor = 0.01;
             controls.enablePan = false;
-            controls.minDistance = 160;
-            controls.maxDistance = 170;
+            controls.minDistance = 150;
+            controls.maxDistance = 160;
             controls.rotateSpeed = 0.8;
             controls.autoRotate = false;
             controls.minPolarAngle = Math.PI / 3.5;

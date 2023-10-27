@@ -273,6 +273,7 @@ a
 {
   color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 .popUP-content-div1 > aside > span
@@ -474,6 +475,7 @@ a
   font-weight: bold;
   color: var(--whiteText);
   font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
 
   -webkit-transition: color .5s ease;
   -o-transition: color .5s ease;
@@ -550,6 +552,7 @@ a
 {
   width: 190vh;
   margin: auto;
+  display: block;
 }
 
 .openSourced > h1
@@ -560,18 +563,61 @@ a
   font-size: 8vh;
 }
 
-.openSourced > p
+.openSourced > h1 > span
+{
+  color: #09b399;
+}
+
+.openSourced > div > p
 {
   color: var(--whiteText);
   font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 3vh;
+}
 
+.openSourced > div
+{
+  display: flex;
+  flex-direction: row;
 }
 
 .GitHubGLobe
 {
-  width: 80vh;
+  width: 120vh;
   height: 40vh;
-  margin-left: 60vh;
-  margin-top: -30vh;
+  margin-left: 40vh;
+  margin-top: -50vh;
 }
+
+.app
+{
+  padding: 2vh;
+  margin-top: 20vh;
+  color: var(--whiteText);
+  font-family: 'Manrope', sans-serif;
+  background-image: url("V:\VIBHOR's PC\MLH\LandingPage\src\assets\mobile.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 140vh;
+}
+
+.app > h1
+{
+  font-size: 8vh;
+}
+
+.app > p
+{
+  font-size: 3.5vh;
+  width: 140vh;
+}
+
+.download
+{
+  width: auto;
+  padding-left: 3.5vh; 
+}
+
+ /***************************************** FOOTER DIV *************************************************/
+

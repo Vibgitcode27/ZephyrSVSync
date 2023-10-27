@@ -8,6 +8,8 @@ import { lodge } from "../store/atoms/signUpPop";
 import * as React from 'react';
 import { useRecoilState , useRecoilValue , useSetRecoilState} from "recoil";
 import GlobeComponent2 from "./GLobeVisu2";
+import Avatar from '@mui/material/Avatar';
+
 
 export function LandingPage() {
 
@@ -149,12 +151,36 @@ export function LandingPage() {
 </section> 
 
 <section className="openSourced">
-    <h1>We're Open on GitHub!</h1>
-    <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
-    <div className="GitHubGLobe">
-        <GlobeComponent2/>
+    <h1>We're Open on <span>GitHub!</span></h1>
+    <div className="globeDiv">
+        <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
+        <div className="GitHubGLobe">
+            <GlobeComponent2/>
+        </div>
     </div>
-</section>   
+</section>
+
+<section className="featured , app">
+        <h1>Your GitHub Toolkit, Now Mobile!</h1>
+        <p>Our mobile app delivers all the power of our platform right into your pocket. Stay updated, create, and organize, wherever you are.</p>
+        <div className="tagDiv">
+                <a href="https://dribbble.com/shots/1698332-The-Scene-app-landing-page-and-app-redesign"><h3 className="tagLine , download">Download The App</h3></a>
+        </div>
+</section>
+
+<section className="mainFooter">
+    <div className="mainFooter-childDiv">
+    <Avatar alt="Remy Sharp" src="src\assets\logo.jpg" style={{ marginTop : "1.5vh" , borderRadius : "30px"}}/>
+        <h1>Team.</h1>
+        <div>
+            <h4>Connect:</h4>
+            <p>GitHub</p>
+            <p>Youtube</p>
+            <p>SIH</p>
+            <p>LinkdIn</p>
+        </div>
+    </div>
+</section>
       </div>
     )
 }
