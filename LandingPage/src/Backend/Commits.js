@@ -1,7 +1,7 @@
-// const { Octokit } = require('@octokit/core');
+// import { Octokit } from '@octokit/core';
 //
 // const octokit = new Octokit({
-//     auth: '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',
+//     auth: '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',
 // });
 //
 // const getCommitActivity = async () => {
