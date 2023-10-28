@@ -12,7 +12,7 @@ function App() {
   return (
     <RecoilRoot>
         <div>
-                <Router>
+            <Router>
                   {/* <ActiveUser/> */}
                     <Routes>
                         <Route path={"/Gsoc"} element={<Gsoc/>}/>
