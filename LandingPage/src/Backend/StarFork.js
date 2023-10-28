@@ -1,11 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import axios from 'axios';
+import cors from 'cors';
 
-const app6 = express();
+const app = express();
 const port = 5006;
 
-app6.use(express.json());
+app.use(express.json());
+
+app.use(cors());
 
 const DataSchema = new mongoose.Schema({
     Stars: String,
@@ -20,7 +23,7 @@ mongoose.connect('mongodb+srv://ShashwatPS:1@cluster0.1alkv6j.mongodb.net/ForkSt
     useUnifiedTopology: true,
 });
 
-app6.post('/data', async (req, res) => {
+app.post('/data', async (req, res) => {
     try {
         const { username } = req.body;
         let user = await User.findOne({ Username: username });
@@ -52,8 +55,6 @@ app6.post('/data', async (req, res) => {
     }
 });
 
-app6.listen(port, () => {
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
-
-module.exports = app6;

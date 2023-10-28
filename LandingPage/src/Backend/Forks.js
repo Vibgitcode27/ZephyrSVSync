@@ -3,11 +3,13 @@ import axios from 'axios';
 import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
 const port = 5004;
 
 app.use(bodyParser.json());
+app.use(cors())
 
 mongoose.connect('mongodb+srv://ShashwatPS:1@cluster0.1alkv6j.mongodb.net/Forked', {
     useNewUrlParser: true,

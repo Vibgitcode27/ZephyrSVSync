@@ -30,11 +30,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import { Octokit } from '@octokit/core';
 import axios from 'axios';
+import cors from 'cors';
 
 const app = express();
 const port =5002;
-
 app.use(express.json());
+app.use(cors());
 
 const LeaderBoardSchema = new mongoose.Schema({
     Name: String,
