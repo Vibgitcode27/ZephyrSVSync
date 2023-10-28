@@ -1,7 +1,7 @@
-// const { Octokit } = require('@octokit/core');
+// import { Octokit } from '@octokit/core';
 //
 // const octokit = new Octokit({
-//     auth: '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',
+//     auth: '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',
 // });
 //
 // const getCommitActivity = async () => {
@@ -28,11 +28,11 @@
 
 import express from 'express';
 import mongoose from 'mongoose';
-import Octokit from '@octokit/core';
+import { Octokit } from '@octokit/core';
 import axios from 'axios';
 
 const app = express();
-const port = 3000;
+const port =5000;
 
 app.use(express.json());
 
