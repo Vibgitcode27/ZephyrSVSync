@@ -9,8 +9,8 @@ on:
   schedule:
     - cron: '0 12 * * *' #Will Trigger at Noon Everyday
 
-# Manually Running this WorkFlow from the Actions Tab
-workflow_dispatch:
+  # Manually Running this WorkFlow from the Actions Tab
+  workflow_dispatch:
 
 jobs:
   commit:
@@ -21,7 +21,7 @@ jobs:
 
       - name: Run Script
         run: |
-          git config --global user.name \${{ github.actor }}
+          git config --global user.name \${GITHUB_ACTOR}
           git config --global user.email \${{ secrets.USER_EMAIL }}
           git commit --allow-empty -m 'Farming Time:'
           git push origin main

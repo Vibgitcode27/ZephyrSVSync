@@ -129,66 +129,72 @@ export default function Trending() {
                     height: '100vh',
                 }}
             >
-                <AppBar position="absolute" open={open}>
+                <AppBar>
                     <Toolbar
                         sx={{
                             pr: '24px',
                         }}
                     >
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="open drawer"
+                        <Toolbar
                             sx={{
-                                marginRight: '36px',
-                                ...(open && { display: 'none' }),
+                                pr: '24px',
                             }}
                         >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography
-                            component="h1"
-                            variant="h6"
-                            color="inherit"
-                            noWrap
-                            sx={{ flexGrow: 1 }}
-                        >
-                            TRENDING REPOS
-                        </Typography>
-                        <div className="search-container" sx={{ position: 'relative', marginLeft: 'auto', marginRight: '16px' }}>
-                            <SearchIcon sx={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', marginLeft: '8px', color: '#93B1A6' }} />
-                            <InputBase
-                                placeholder="Search..."
-                                value={searchQuery}
-                                onChange={handleSearchChange}
+                            <IconButton
+                                edge="start"
+                                color="inherit"
+                                aria-label="open drawer"
                                 sx={{
-                                    color: 'white',
-                                    paddingLeft: '32px',
+                                    marginRight: '36px',
+                                    ...(open && { display: 'none' }),
                                 }}
-                            />
-                            <Button variant="contained" color="primary" onClick={handleSearchClick} sx={{ marginLeft: '8px' }}>
-                                Search
-                            </Button>
-                        </div>
+                            >
+                                <MenuIcon />
+                            </IconButton>
+                            <Typography
+                                component="h1"
+                                variant="h6"
+                                color="inherit"
+                                noWrap
+                                sx={{ flexGrow: 1 }}
+                            >
+                                TRENDING REPOS
+                            </Typography>
+                            <div className="search-container" sx={{ position: 'relative', marginLeft: 'auto', marginRight: '16px' }}>
+                                <SearchIcon sx={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', marginLeft: '8px', color: '#93B1A6' }} />
+                                <InputBase
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={handleSearchChange}
+                                    sx={{
+                                        color: 'white',
+                                        paddingLeft: '32px',
+                                    }}
+                                />
+                                <Button variant="contained" color="primary" onClick={handleSearchClick} sx={{ marginLeft: '8px' }}>
+                                    Search
+                                </Button>
+                            </div>
 
-                        <div sx={{ marginLeft: '16px' }}>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={() => handleSortClick('stars')}
-                                sx={{ marginLeft: '8px' }}
-                            >
-                                Sort by Stars
-                            </Button>
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={() => handleSortClick('forks')}
-                                sx={{ marginLeft: '8px' }}
-                            >
-                                Sort by Forks
-                            </Button>
-                        </div>
+                            <div sx={{ marginLeft: '16px' }}>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => handleSortClick('stars')}
+                                    sx={{ marginLeft: '8px' }}
+                                >
+                                    Sort by Stars
+                                </Button>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    onClick={() => handleSortClick('forks')}
+                                    sx={{ marginLeft: '8px' }}
+                                >
+                                    Sort by Forks
+                                </Button>
+                            </div>
+                        </Toolbar>
                     </Toolbar>
                 </AppBar>
                 <Box
@@ -220,6 +226,7 @@ export default function Trending() {
         </ThemeProvider>
     );
 }
+
 
 function Org(props) {
     const languageColors = {
@@ -267,13 +274,11 @@ function Org(props) {
         return null;
     };
 
-
     return (
         <Card
             style={{
                 margin: 25,
                 width: 300,
-                minHeight: 300,
                 borderRadius: 12,
                 overflow: 'hidden',
                 backgroundColor: '#0d1117',
@@ -300,11 +305,15 @@ function Org(props) {
                         variant="h6"
                         component="div"
                         color={'#58a6ff'}
-                        style={{ fontWeight: '600', marginBottom: '8px' }}
+                        style={{ fontWeight: '600', marginBottom: '8px', maxHeight: '48px', overflow: 'hidden' }}
                     >
                         {props.repo.full_name}
                     </Typography>
-                    <Typography variant="body2" color="#c9d1d9" style={{ marginBottom: '8px' }}>
+                    <Typography
+                        variant="body2"
+                        color="#c9d1d9"
+                        style={{ marginBottom: '8px', maxHeight: '60px', overflow: 'hidden' }}
+                    >
                         {props.repo.description}
                     </Typography>
                     <Typography variant="body2" color="#c9d1d9" style={{ marginBottom: '8px' }}>
