@@ -21,29 +21,21 @@ export function SignInPop()
     const [ password , setPassword] = useState("");
 
     async function registerviaGoogle() {
-        try {
             const res = await account.createOAuth2Session(
                 "google",
                 "http://localhost:5173/loading",
                 "http://localhost:5173/"
             );
             console.log(res);
-        } catch (error) {
-            console.error("Error registering via Google:", error);
-        }
     }
 
     async function registerviaGithub() {
-        try {
-            const res = await account.createOAuth2Session(
-                "github",
-                "http://localhost:5173/loading",
-                "http://localhost:5173/"
-            );
-            console.log(res);
-        } catch (error) {
-            console.error("Error registering via Github:", error);
-        }
+        const res = await account.createOAuth2Session(
+            "github",
+            "http://localhost:5173/loading",
+            "http://localhost:5173/"
+        );
+        console.log(res);
     }
 
     return (
