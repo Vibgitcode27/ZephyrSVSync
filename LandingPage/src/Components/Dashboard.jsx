@@ -6,8 +6,10 @@ import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
-import {StaticNavBar} from "./Navbar.jsx";
-// import Header from "../../components/Header";
+import { StaticNavBar } from "./Navbar";
+import Header from "./Header";
+
+import { ColorModeContext, useMode } from "../theme";
 // import LineChart from "../../components/LineChart";
 // import GeographyChart from "../../components/GeographyChart";
 // import BarChart from "../../components/BarChart";
@@ -19,12 +21,15 @@ const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-      <div>
-        <StaticNavBar></StaticNavBar>
+    <div>
+      <StaticNavBar/>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        {/* <Header title="DASHBOARD" subtitle="@Litomatoma2703" /> */}
+        <Header title="DASHBOARD" subtitle="@Litomatoma2703" />
 
         <Box>
           <Button
@@ -296,7 +301,9 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
-      </div>
+    </ThemeProvider>
+    </ColorModeContext.Provider>
+    </div>
   );
 };
 
