@@ -1,7 +1,19 @@
-import React from 'react';
+import { StaticNavBar } from "./Navbar.jsx";
+import {useState} from "react";
 
 const Loading = () => {
+    const [mail,setMail] = useState('');
+    function getValue() {
+        var emailInput = document.getElementById('emailInput');
+        var emailValue = emailInput.value;
+        setMail(emailValue);
+    }
+
+
+
     return (
+        <div>
+            <StaticNavBar/>
         <div
             style={{
                 display: 'flex',
@@ -35,22 +47,28 @@ const Loading = () => {
                     style={{
                         padding: '8px',
                         borderRadius: '4px',
-                        border: '1px solid #58a6ff', // GitHub accent color
+                        border: '1px solid #58a6ff',
                         outline: 'none',
+                        marginRight: '8px',
                     }}
                 />
+                <button
+                    style={{
+                        padding: '8px',
+                        borderRadius: '4px',
+                        background: '#58a6ff',
+                        color: '#ffffff',
+                        border: 'none',
+                        cursor: 'pointer',
+                        outline: 'none',
+                        marginTop: '10px'
+                    }}
+                    onClick={getValue}
+                >
+                    Let's Go
+                </button>
             </div>
-            <div
-                style={{
-                    marginTop: '20px',
-                    width: '50px',
-                    height: '50px',
-                    borderRadius: '50%',
-                    border: '5px solid #58a6ff', // GitHub accent color
-                    borderTop: '5px solid transparent',
-                    animation: 'spin 1s linear infinite',
-                }}
-            />
+        </div>
         </div>
     );
 };
