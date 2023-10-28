@@ -24,7 +24,7 @@ export function SignInPop()
         try {
             const res = await account.createOAuth2Session(
                 "google",
-                "http://localhost:5173/gsoc",
+                "http://localhost:5173/loading",
                 "http://localhost:5173/"
             );
             console.log(res);
@@ -37,7 +37,7 @@ export function SignInPop()
         try {
             const res = await account.createOAuth2Session(
                 "github",
-                "http://localhost:5173/gsoc",
+                "http://localhost:5173/loading",
                 "http://localhost:5173/"
             );
             console.log(res);

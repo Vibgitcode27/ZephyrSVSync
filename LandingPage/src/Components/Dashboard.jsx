@@ -6,6 +6,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
+import {StaticNavBar} from "./Navbar.jsx";
 // import Header from "../../components/Header";
 // import LineChart from "../../components/LineChart";
 // import GeographyChart from "../../components/GeographyChart";
@@ -13,11 +14,13 @@ import TrafficIcon from "@mui/icons-material/Traffic";
 // import StatBox from "../../components/StatBox";
 // import ProgressCircle from "../../components/ProgressCircle";
 
+
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-
   return (
+      <div>
+        <StaticNavBar></StaticNavBar>
     <Box m="20px">
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -293,6 +296,7 @@ const Dashboard = () => {
         </Box>
       </Box>
     </Box>
+      </div>
   );
 };
 

@@ -9,6 +9,7 @@ import Trending from "./Components/Trending.jsx";
 import DataFill from "./Components/DataFill.jsx";
 import Dashboard from "./Components/Dashboard.jsx";
 import ForestFarmer from "./Components/ForestFarmer.jsx";
+import Loading from "./Components/Loading.jsx";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
                         <Route path={"/DataFill"} element={<DataFill/>}/>
                         <Route path={"/dashboard"} element={<Dashboard/>}/>
                         <Route path={"/forest"} element={<ForestFarmer/>}/>
+                        <Route path={"/loading"} element={<Loading/>}/>
                     </Routes>
                 </Router>
             </div>

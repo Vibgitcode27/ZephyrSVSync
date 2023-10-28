@@ -10,14 +10,31 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const userSchema = new mongoose.Schema({
+    name: String,
     email: String,
     gender: String,
     username: String,
+    twitter: {
+        type: String,
+        required: false,
+        default: null
+    },
+    github: {
+        type: String,
+        required: false,
+        default: null
+    },
+    linkedin: {
+        type: String,
+        required: false,
+        default: null
+    },
     pat: {
         type: String,
         required: false,
         default: null
     },
+
 });
 
 const UserDetails = mongoose.model('UserDetails', userSchema);
@@ -28,8 +45,8 @@ mongoose.connect('mongodb+srv://ShashwatPS:1@cluster0.1alkv6j.mongodb.net/Profil
 });
 
 app.post('/saveDetails', async (req, res) => {
-    const { email,gender,username,pat = null} = req.body;
-    const newUser = new UserDetails({email,gender,username,pat});
+    const { email,gender,username,pat = null,linkedin=null,twitter=null,github=null} = req.body;
+    const newUser = new UserDetails({email,gender,username,pat,linkedin,twitter,github});
     newUser.save();
     res.status(200).json({message: "User Details Created Successfully"});
 });
@@ -40,6 +57,6 @@ app.get('/getDetails',async(req,res)=>{
     res.status(200).json(user);
 });
 
-app.listen(5000, () => {
-    console.log(`Server is running on port 3000`);
+app.listen(5003, () => {
+    console.log(`Server is running on port 5003`);
 });

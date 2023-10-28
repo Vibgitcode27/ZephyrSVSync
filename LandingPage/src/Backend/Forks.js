@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 
 const app = express();
-const port = 5000;
+const port = 5004;
 
 app.use(bodyParser.json());
 
