@@ -1,26 +1,58 @@
-import { account } from "../Backend/appwriteConfig.js";
-import {Button} from "@mui/material";
-import {useState} from "react";
+import React from 'react';
 
-export default function Dashboard(){
-    const[email,setEmail] = useState('Initial');
-    async function Mail(){
-        const promise = account.get();
-
-        promise.then(function (response) {
-            setEmail(response.email);
-        }, function (error) {
-            console.log(error); // Failure
-        });
-    }
-
-    return(
-        <div>
-            <h1>This is the Dashboard</h1>
-            <Button onClick={Mail}>Check</Button>
-            <h1 style={{
-                color: 'white',
-            }}>{email}</h1>
+const Loading = () => {
+    return (
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh',
+                background: '#0d1117',
+                color: '#c9d1d9',
+            }}
+        >
+            <div
+                style={{
+                    marginTop: '20px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                }}
+            >
+                <label
+                    htmlFor="emailInput"
+                    style={{
+                        marginBottom: '8px',
+                    }}
+                >
+                    Enter your email:
+                </label>
+                <input
+                    type="email"
+                    id="emailInput"
+                    style={{
+                        padding: '8px',
+                        borderRadius: '4px',
+                        border: '1px solid #58a6ff', // GitHub accent color
+                        outline: 'none',
+                    }}
+                />
+            </div>
+            <div
+                style={{
+                    marginTop: '20px',
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '50%',
+                    border: '5px solid #58a6ff', // GitHub accent color
+                    borderTop: '5px solid transparent',
+                    animation: 'spin 1s linear infinite',
+                }}
+            />
         </div>
-    )
-}
+    );
+};
+
+export default Loading;
