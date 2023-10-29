@@ -5,7 +5,12 @@ import image3 from "../assets/image3.png"
 import image4 from "../assets/image4.png"
 import image5 from "../assets/image5.png"
 import {useNavigate} from "react-router-dom"
+// import { createWidget } from '@typeform/embed'
+// import '@typeform/embed/build/css/widget.css'
 
+// const MyComponent = () => {
+//     return <Widget id="EMAaNXeD" style={{ width: '50%' }} className="my-form" />
+// }
 
 export default function Tools() {
     const navigate = useNavigate();
@@ -59,7 +64,7 @@ export default function Tools() {
             </div>
         </section>
         <section className="form">
-
+            {/*{createWidget('EMAaNXeD', { container: document.querySelector('#form') })};*/}
         </section>
         </body>
 
