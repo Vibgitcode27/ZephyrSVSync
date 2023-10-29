@@ -23,7 +23,7 @@ const ogValue = `
       dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 `;
 
-function ForestFarmer() {
+function Snake() {
     const editorRef = useRef();
 
     return (
@@ -67,4 +67,4 @@ function ForestFarmer() {
     );
 }
 
-export default ForestFarmer;
+export default Snake;

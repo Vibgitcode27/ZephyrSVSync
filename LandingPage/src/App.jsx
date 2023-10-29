@@ -12,6 +12,7 @@ import ForestFarmer from "./Components/ForestFarmer.jsx";
 import Loading from "./Components/Loading.jsx";
 import Tools from "./Components/Tools.jsx";
 import Resources from "./Components/Resources.jsx";
+import Snake from "./Components/Snake.jsx";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                         <Route path={"/loading"} element={<Loading/>}/>
                         <Route path={"/tools"} element={<Tools/>}/>
                         <Route path={"/resources"} element={<Resources/>}/>
+                        <Route path={"/snake"} element={<Snake/>}/>
                     </Routes>
                 </Router>
             </div>
