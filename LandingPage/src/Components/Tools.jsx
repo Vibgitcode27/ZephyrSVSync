@@ -5,8 +5,16 @@ import image3 from "../assets/image3.png"
 import image4 from "../assets/image4.png"
 import image5 from "../assets/image5.png"
 import {useNavigate} from "react-router-dom"
+import { Popup } from 'react-typeform-embed';
 import { StaticNavBar2 } from "./Navbar2"
 
+const App = () => {
+    return (
+        <Popup id="EMAaNXeD" size={80}>
+            <button>Open Popup</button>
+        </Popup>
+    );
+}
 export default function Tools() {
     const navigate = useNavigate();
     return (
@@ -59,9 +67,23 @@ export default function Tools() {
             </div>
         </section>
         <section className="form">
-
+            <div style={{
+                paddingLeft: '725px',
+                paddingTop: '20px',
+            }}>
+            <App style={{
+                color: "black",
+            }}></App>
+                </div>
+            <div style={{
+                paddingTop: '15px',
+                paddingLeft: '310px',
+                fontWeight: '20',
+                fontSize: '25px',
+            }}>
+                Have a unique idea and want to get featured on our website. Hurry up and click this button!
+            </div>
         </section>
         </body>
-
     )
 }

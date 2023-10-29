@@ -27,9 +27,11 @@ app.post('/data', async (req, res) => {
     try {
         const { username } = req.body;
         let user = await User.findOne({ Username: username });
+        let stars, forks;
+
         if (user) {
             const githubApiResponse = await axios.get(`https://api.github-star-counter.workers.dev/user/${username}`);
-            const { stars, forks } = githubApiResponse.data;
+            ({ stars, forks } = githubApiResponse.data);
 
             user.Stars = stars;
             user.Forks = forks;
@@ -37,7 +39,7 @@ app.post('/data', async (req, res) => {
             await user.save();
         } else {
             const githubApiResponse = await axios.get(`https://api.github-star-counter.workers.dev/user/${username}`);
-            const { stars, forks } = githubApiResponse.data;
+            ({ stars, forks } = githubApiResponse.data);
 
             const newLead = new User({
                 Stars: stars,
@@ -47,8 +49,7 @@ app.post('/data', async (req, res) => {
 
             await newLead.save();
         }
-
-        res.status(201).json({ success: true, message: 'Data saved/updated successfully!' });
+        res.status(201).json({ stars, forks });
     } catch (error) {
         console.error('Error:', error.message);
         res.status(500).json({ success: false, message: 'Internal server error' });
