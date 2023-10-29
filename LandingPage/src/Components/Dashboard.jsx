@@ -55,23 +55,27 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let headers = {
-                    "Content-Type": "application/json",
+                const options = {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'username': username,
+                    }
+                };
 
-                }
-                const response = await axios.post('http://localhost:5006/data', {}, { headers: headers });
-                if (response.data.success) {
-                    console.log(response.data);
-                    setForks(response.data.forks);
-                    setStars(response.data.stars);
-                    const githubResponse = await axios.get(`https://api.github.com/users/${name}`);
-                    console.log(githubResponse.data.followers)
-                    setFollowers(githubResponse.data.followers);
-                    console.log(githubResponse.data.following)
-                    setFollowing(githubResponse.data.following);
-                } else {
-                    console.error('Error:', response.data.message);
-                }
+                axios.post('http://localhost:5006/data', {}, options)
+                    .then((res) => {
+                        console.log(res.data);
+                        setForks(res.data.forks);
+                        setStars(res.data.stars);
+                        const githubResponse = axios.get(`https://api.github.com/users/${name}`);
+                        console.log(githubResponse.data.followers)
+                        setFollowers(githubResponse.data.followers);
+                        console.log(githubResponse.data.following)
+                        setFollowing(githubResponse.data.following);
+                    })
+                    .catch((err) => {
+                        console.log("ERROR: ====", err);
+                    })
             } catch (error) {
                 console.error('Error:', error.message);
             }
@@ -116,7 +120,6 @@ const Dashboard = () => {
                             gridAutoRows="140px"
                             gap="20px"
                         >
-                            {fork}
                             <Box
                                 gridColumn="span 3"
                                 backgroundColor={colors.primary[400]}
