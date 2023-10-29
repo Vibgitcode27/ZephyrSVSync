@@ -161,7 +161,7 @@ export function LandingPage() {
         <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
         <div className="GitHubGLobe">
             {/* <GlobeComponent2/> */}
-            <Spline scene="https://prod.spline.design/VMUh1t2v-K5kNCPe/scene.splinecode" />
+            {/* <Spline scene="https://prod.spline.design/VMUh1t2v-K5kNCPe/scene.splinecode" /> */}
         </div>
     </div>
 </section>
