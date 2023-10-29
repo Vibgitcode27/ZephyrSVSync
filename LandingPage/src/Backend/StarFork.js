@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://ShashwatPS:1@cluster0.1alkv6j.mongodb.net/ForkSt
 
 app.post('/data', async (req, res) => {
     try {
-        const { username } = req.body;
+        const { username } = req.headers;
         let user = await User.findOne({ Username: username });
         let stars, forks;
 
