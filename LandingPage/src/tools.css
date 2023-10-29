@@ -92,6 +92,7 @@ body
     display: flex;
     height: 20vh;
     margin-left: 3vh;
+    cursor: pointer;
 }
 img
 {
