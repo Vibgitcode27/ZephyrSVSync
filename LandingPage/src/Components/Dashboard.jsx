@@ -55,7 +55,11 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:5006/data', {}, { name });
+                let headers = {
+                    "Content-Type": "application/json",
+
+                }
+                const response = await axios.post('http://localhost:5006/data', {}, { headers: headers });
                 if (response.data.success) {
                     console.log(response.data);
                     setForks(response.data.forks);

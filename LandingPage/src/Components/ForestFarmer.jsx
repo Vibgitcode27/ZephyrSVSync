@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import "./pre.css";
+import {StaticNavBar2} from "./Navbar2.jsx";
 
 const ogValue = `
 name: Farming
@@ -29,8 +30,9 @@ jobs:
 
 function ForestFarmer() {
     const editorRef = useRef();
-
     return (
+        <div>
+            <StaticNavBar2></StaticNavBar2>
         <div
             style={{
                 paddingRight: "300px",
@@ -55,6 +57,7 @@ function ForestFarmer() {
                     <li>Visit the "Actions" tab on your GitHub repository to see the workflow in action.</li>
                 </ol>
             </div>
+        </div>
         </div>
     );
 }

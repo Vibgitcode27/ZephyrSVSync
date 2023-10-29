@@ -1,5 +1,6 @@
 import { StaticNavBar } from "./Navbar.jsx";
 import {useState} from "react";
+import {StaticNavBar2} from "./Navbar2.jsx";
 
 const Loading = () => {
     const [mail, setMail] = useState('');
@@ -44,7 +45,7 @@ const Loading = () => {
 
     return (
         <div>
-            <StaticNavBar/>
+            <StaticNavBar2/>
         <div
             style={{
                 display: 'flex',

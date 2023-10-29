@@ -19,23 +19,23 @@ export function SignUpPop()
     const [ password , setPassword] = useState("");
 
 
-    // async function registerviaGoogle() {
-    //     const res = await account.createOAuth2Session(
-    //         "google",
-    //         "http://localhost:5173/loading",
-    //         "http://localhost:5173/"
-    //     );
-    //     console.log(res);
-    // }
+    async function registerviaGoogle() {
+        const res = await account.createOAuth2Session(
+            "google",
+            "http://localhost:5173/loading",
+            "http://localhost:5173/"
+        );
+        console.log(res);
+    }
 
-    // async function registerviaGithub() {
-    //     const res = await account.createOAuth2Session(
-    //         "github",
-    //         "http://localhost:5173/loading",
-    //         "http://localhost:5173/"
-    //     );
-    //     console.log(res);
-    // }
+    async function registerviaGithub() {
+        const res = await account.createOAuth2Session(
+            "github",
+            "http://localhost:5173/loading",
+            "http://localhost:5173/"
+        );
+        console.log(res);
+    }
 
     return (
         <>
