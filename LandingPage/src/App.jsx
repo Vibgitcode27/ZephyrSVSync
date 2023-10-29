@@ -13,6 +13,7 @@ import Loading from "./Components/Loading.jsx";
 import Tools from "./Components/Tools.jsx";
 import Resources from "./Components/Resources.jsx";
 import Snake from "./Components/Snake.jsx";
+import { StaticNavBar2 } from './Components/Navbar2';
 
 function App() {
 

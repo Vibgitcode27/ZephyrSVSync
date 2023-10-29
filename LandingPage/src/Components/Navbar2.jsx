@@ -13,8 +13,9 @@ import Button from '@mui/material/Button';
 import { userState } from "../store/atoms/user";
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/logo.jpg"
 
-export function StaticNavBar()
+export function StaticNavBar2()
 {
     const userEmail = useRecoilValue(emailSelector)
     const [popup , setPopup] = useRecoilState(LogInPop)
@@ -26,52 +27,17 @@ export function StaticNavBar()
         AOS.init({duration : 700})
     } ,[])
 
-    if(userEmail)
-    {
+
         return (
             <>
-            <div className="navbar">
+            <div className="navbar" id="navbar2">
                     <h2>
-                    <Avatar style={{height : "10vh" , width : "auto" , padding : "0px"}} alt="Remy Sharp" src="src\assets\logo.jpg" />
+                    <Avatar sx={{ width: 80, height: 80 }} alt="Remy Sharp" src={Logo} />
                     <span>GITBIT</span>
                     </h2>
-                    <div id="typing">
-                        
-                    </div>
-                    <Button variant="outlined" id="LPSignUp" onClick={() =>
-                    {
-                        setSignUpPopup(!signuppopup)
-                    }}>LogOut</Button>
                 </div>
-                {signuppopup==false && (
-                    <SignUpPop/>
-                )}
             </>
         )
-    }
-    else
-    {
-        return (
-            <>
-            <div className="navbar">
-                    <h2>
-                    <Avatar style={{height : "10vh" , width : "auto" , padding : "0px"}} alt="Remy Sharp" src="src\assets\logo.jpg" />
-                    <span>GITBIT</span>
-                    </h2>
-                    <div id="typing">
-                        
-                    </div>
-                    <Button  variant="outlined" id="LPSignUp" onClick={() =>
-                    {
-                        setSignUpPopup(!signuppopup)
-                    }}>Get Started</Button>
-                </div>
-                {signuppopup==false && (
-                    <SignUpPop/>
-                )}
-            </>
-        )
-    }
 }
 
 

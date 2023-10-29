@@ -31,14 +31,14 @@ export function SignUpPop()
                                 <img src="src\assets\logo.jpg" alt=""/>
                                 <h1>GITBIT.</h1>
                             </div>
-                                <aside>
+                                {/* <aside>
                                 <p>Already a member?</p>
                                 <span onClick={() =>
                                 {
                                     setPopup(!popup)
                                     setSignUpPopup(!signuppopup)
                                 }}>Log In</span>
-                                </aside>
+                                </aside> */}
                         </div>
                                 {/* </div> */}
                     {/* <div className="popUp-content2">        */}
@@ -46,7 +46,7 @@ export function SignUpPop()
                             <h2>Register Now</h2>
                             {/*************************  Input box 1 ***********************/}
                             <div>
-                            <Button variant="outlined" style={{backgroundColor : "#09b399" , color : "black" , border : "2px solid black" , fontWeight : "600"}} id="LPSignIn" onClick={ async () =>
+                            {/* <Button variant="outlined" style={{backgroundColor : "#09b399" , color : "black" , border : "2px solid black" , fontWeight : "600"}} id="LPSignIn" onClick={ async () =>
                             {
                                 try {
                                     let sendData = {
@@ -68,16 +68,16 @@ export function SignUpPop()
                                     console.error();
                                 }
                                 setSignUpPopup(!signuppopup)
-                            }}>SignUp</Button> 
+                            }}>SignUp</Button>  */}
                             </div>
-                            <div style={{display : "flex"}}>
-                                <p >
-                                    <GitHubIcon/>
-                                </p>
-                                <p style={{marginLeft : "30px"}}>
-                                <GoogleIcon/>
-                                </p>
-                                </div>
+                                <div style={{display : "flex"}}>
+                                    <p >
+                                        <GitHubIcon sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}}/>
+                                    </p>
+                                    <p  style={{marginLeft : "30px"}}>
+                                        <GoogleIcon  sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}}/>
+                                    </p>
+                            </div>
                         </div>
                     </div>
                 </div>
