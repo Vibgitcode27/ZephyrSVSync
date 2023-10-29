@@ -70,8 +70,8 @@ function GlobeComponent2() {
             controls.enableDamping = true;
             controls.dynamicDampingFactor = 0.01;
             controls.enablePan = false;
-            controls.minDistance = 150;
-            controls.maxDistance = 160;
+            controls.minDistance = 200;
+            controls.maxDistance = 250;
             controls.rotateSpeed = 0.8;
             controls.autoRotate = false;
             controls.minPolarAngle = Math.PI / 3.5;
@@ -219,7 +219,7 @@ function GlobeComponent2() {
         };
     }, []);  // Empty dependency array means it will run once on mount and cleanup on unmount
 
-    return <div ref={containerRef} style={{ width: '100%', height: '100%' }}></div>;
+    return <div ref={containerRef} style={{ width: '100%', height: '70%' }}></div>;
 }
 
 export default GlobeComponent2;

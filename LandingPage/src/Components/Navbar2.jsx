@@ -14,29 +14,39 @@ import { userState } from "../store/atoms/user";
 import Avatar from '@mui/material/Avatar';
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.jpg"
+import { Router } from "react-router-dom"
+import {account} from "../Backend/appwriteConfig"
+import { Logout } from "@mui/icons-material";
 
 export function StaticNavBar2()
-{
+{   async function logout(){
+    await account.deleteSession('current');
+    Router.push("/");
+}
     const userEmail = useRecoilValue(emailSelector)
     const [popup , setPopup] = useRecoilState(LogInPop)
     const [signuppopup , setSignUpPopup] = useRecoilState(lodge)
     const setUser = useSetRecoilState(userState);
     const navigate = useNavigate();
+
     useEffect(() =>
     {
         AOS.init({duration : 700})
     } ,[])
 
-
         return (
             <>
-            <div className="navbar" id="navbar2">
+                <div className="navbar" id="navbar2">
                     <h2>
-                    <Avatar sx={{ width: 80, height: 80 }} alt="Remy Sharp" src={Logo} />
+                    <Avatar style={{height : "10vh" , width : "auto" , padding : "0px"}} alt="Remy Sharp" src="src\assets\logo.jpg" />
                     <span>GITBIT</span>
                     </h2>
+                    <div id="typing">
+                        
+                    </div>
+                    <Button variant="outlined" id="LPSignUp" onClick={() => navigate("/")}>LogOut</Button>
                 </div>
-            </>
+            </>            
         )
 }
 

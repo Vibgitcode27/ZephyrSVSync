@@ -351,30 +351,21 @@ a
 .featured
 {
   background-color: rgba(255, 255, 255, 0.05);
-  width: 95%;
+  width: 100%;
   border-radius: 20px;
   margin: auto;
   margin-top: -15vh;
   height: inherit;
-  margin-bottom: 10vh;
 }
 
 
 .featured > div >  h1
 {
   font-size: 10vh;
-  width: 140vh;
+  width: 20%;
+  margin: auto;
   font-family: 'Inter', sans-serif;
-  background-image: linear-gradient(to left , #09b399 , #3c346e , #09b399 , rgb(9, 29, 91));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  transition: all .45s cubic-bezier(.47,1.64,.41,.8);
-  animation: text-animate 5s linear infinite;
-  -webkit-background-size : 500%;
-  background-size: 500%;
-  color:#008170;
+  color:#00a791;
   padding: 5vh;
 }
 
@@ -547,6 +538,16 @@ a
   }
 }
 
+.MidCard
+{
+  width: 40%;
+  margin: auto;
+}
+.manual
+{
+  background-color: #952aff;
+}
+
 .openSourced
 {
   width: 190vh;
@@ -583,15 +584,16 @@ a
 
 .GitHubGLobe
 {
-  width: 120vh;
-  height: 40vh;
-  margin-left: 40vh;
-  margin-top: -50vh;
+  width: 170vh;
+  height: 80vh;
+  margin-left: 10vh;
+  margin-top: -20vh;
 }
 
 .app
 {
-  padding: 2vh;
+  /* padding: 2vh; */
+  padding-top: 5vh;
   margin-top: 20vh;
   color: var(--whiteText);
   font-family: 'Manrope', sans-serif;
@@ -599,23 +601,92 @@ a
   background-size: contain;
   background-repeat: no-repeat;
   background-position: 140vh;
+  
 }
 
 .app > h1
 {
   font-size: 8vh;
+  width : 61%;
+  margin: auto;
 }
 
 .app > p
 {
-  font-size: 3.5vh;
-  width: 140vh;
+  padding-top: 3vh;
+  font-size: 3vh;
+  width : 46%;
+  margin: auto;
+  text-align: center;
+}
+
+.tagDiv2
+{
+  width: 12%;
+  margin: auto;
+  margin-top: 3vh;
+  
 }
 
 .download
 {
   width: auto;
   padding-left: 3.5vh;
+}
+
+footer
+{
+  margin: 0px;
+  margin-top: 10vh;
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
+
+.LogoAva
+{
+  width: 20%;
+  margin: auto;
+}
+
+.Logoss
+{
+  display: flex;
+  width: 70%;
+  margin: auto;
+}
+
+.Logoss > h1
+{
+  font-size: 4vh;
+  margin-top: 4vh;
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+.links
+{
+  display: flex;
+}
+
+.links > p
+{
+  padding-left: 10vh;
+}
+
+#p1
+{
+  padding-left: 0px;
+}
+
+.CopyRight
+{
+  color: var(--whiteText);
+  font-family: 'Inter', sans-serif;
+  font-weight: thin;
+  font-size: 2vh;
+  width: 30%;
+  margin: auto;
+  /* margin-left: 5vh; */
+  padding-left: 20vh;
 }
 
  /***************************************** FOOTER DIV *************************************************/

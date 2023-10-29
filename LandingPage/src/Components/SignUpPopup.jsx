@@ -17,6 +17,26 @@ export function SignUpPop()
     const setUser = useSetRecoilState(userState);
     const [ email , setEmail] = useState("");
     const [ password , setPassword] = useState("");
+
+
+    async function registerviaGoogle() {
+        const res = await account.createOAuth2Session(
+            "google",
+            "http://localhost:5173/loading",
+            "http://localhost:5173/"
+        );
+        console.log(res);
+}
+
+async function registerviaGithub() {
+    const res = await account.createOAuth2Session(
+        "github",
+        "http://localhost:5173/loading",
+        "http://localhost:5173/"
+    );
+    console.log(res);
+}
+
     return (
         <>
             <div className="popUp">
@@ -72,10 +92,10 @@ export function SignUpPop()
                             </div>
                                 <div style={{display : "flex"}}>
                                     <p >
-                                        <GitHubIcon sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}}/>
+                                        <GitHubIcon sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}} onClick={registerviaGithub}/>
                                     </p>
                                     <p  style={{marginLeft : "30px"}}>
-                                        <GoogleIcon  sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}}/>
+                                        <GoogleIcon  sx={{ width: 50, height: 50 }} style={{ borderRadius : "50%" , border : "1px solid white" , padding : "1em" , cursor : "pointer"}} onClick={registerviaGoogle}/>
                                     </p>
                             </div>
                         </div>

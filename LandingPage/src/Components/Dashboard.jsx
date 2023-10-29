@@ -240,21 +240,25 @@ const Dashboard = () => {
                                     variant="h5"
                                     color={colors.greenAccent[500]}
                                 >
-                                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=donut&theme=prussian" alt="Top Languages Card" />
+                                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=donut&theme=holi" alt="Top Languages Card" />
                                 </Typography>
                             </Box>
                         </Box>
+                        
                         <Box
                             gridColumn="span 4"
                             gridRow="span 2"
                             backgroundColor={colors.primary[400]}
                         >
+                            <Typography variant="h5" fontWeight="600" margin={{marginTop : "3vh" , marginLeft : "2vh"}}>
+                                Most Used Languages
+                            </Typography>
                             <Typography
                                 variant="h5"
                                 fontWeight="600"
                                 sx={{ padding: "30px 30px 0 30px" }}
                             >
-                                Data NXST
+                                <img style={{width : "55vh" , marginTop : "5vh"}} src="https://github-readme-stats.vercel.app/api?username=anuraghazra&theme=github_dark&show_icons=true" alt="" />
                             </Typography>
                             <Box height="250px" mt="-20px">
                             </Box>

@@ -9,7 +9,11 @@ import * as React from 'react';
 import { useRecoilState , useRecoilValue , useSetRecoilState} from "recoil";
 import GlobeComponent2 from "./GLobeVisu2";
 import Avatar from '@mui/material/Avatar';
-
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export function LandingPage() {
 
@@ -71,7 +75,7 @@ export function LandingPage() {
                     
                     <div className="ag-courses_item">
                     <a href="#" className="ag-courses-item_link">
-                    <div className="ag-courses-item_bg"></div>
+                    <div className="ag-courses-item_bg manual2"></div>
 
                     <div className="ag-courses-item_title">
                     README Generator
@@ -126,11 +130,11 @@ export function LandingPage() {
                     </div>
                     </a>
                     </div>
-
+                    <div className="MidCard">
+                        
                     <div className="ag-courses_item">
                     <a href="#" className="ag-courses-item_link">
-                    <div className="ag-courses-item_bg"></div>
-
+                    <div className="ag-courses-item_bg manual"></div>
                     <div className="ag-courses-item_title">
                     Trending Repos
                     </div>
@@ -145,6 +149,7 @@ export function LandingPage() {
                     </div>
                     </a>
                     </div>
+                    </div>
 
             </div>
         </div>
@@ -155,7 +160,8 @@ export function LandingPage() {
     <div className="globeDiv">
         <p>Our commitment to transparency and collaboration is rooted in our code. Access, review, or contribute to our application right on GitHub. We're proud to be a part of the developer community, and we invite you to join us on this journey.</p>
         <div className="GitHubGLobe">
-            <GlobeComponent2/>
+            {/* <GlobeComponent2/> */}
+            <Spline scene="https://prod.spline.design/VMUh1t2v-K5kNCPe/scene.splinecode" />
         </div>
     </div>
 </section>
@@ -163,13 +169,30 @@ export function LandingPage() {
 <section className="featured , app">
         <h1>Your GitHub Toolkit, Now Mobile!</h1>
         <p>Our mobile app delivers all the power of our platform right into your pocket. Stay updated, create, and organize, wherever you are.</p>
-        <div className="tagDiv">
-                <a href="https://dribbble.com/shots/1698332-The-Scene-app-landing-page-and-app-redesign"><h3 className="tagLine , download">Download The App</h3></a>
+        <div className="tagDiv tagDiv2">
+                <a href="https://github.com/047pegasus/GitBit/releases/download/v0.1/app-release.apk"><h3 className="tagLine , download">Download The App</h3></a>
         </div>
+        <footer>
+            <div className="LogoAva">
+                <div className="Logoss">
+                    <Avatar sx={{ width: 80, height: 80 }} alt="Remy Sharp" src="src\assets\logo.jpg" />
+                    <h1>GITBIT</h1>
+                </div>
+                <div className="links">
+                    <p id="p1"><GitHubIcon/></p>
+                    <p><TwitterIcon/></p>
+                    <p><InstagramIcon/></p>
+                    <p><FacebookIcon/></p>
+                </div>
+            </div>
+            <div className="CopyRight">
+                <h3>©2023 GitHub. All rights reserved.</h3>
+            </div>
+        </footer>
 </section>
 
-<section className="mainFooter">
-    <div className="mainFooter-childDiv">
+{/* <section className="mainFooter"> */}
+    {/* <div className="mainFooter-childDiv">
     <Avatar alt="Remy Sharp" src="src\assets\logo.jpg" style={{ marginTop : "1.5vh" , borderRadius : "30px"}}/>
         <h1>Team.</h1>
         <div>
@@ -180,7 +203,8 @@ export function LandingPage() {
             <p>LinkdIn</p>
         </div>
     </div>
-</section>
+</section> */}
+
       </div>
     )
 }

@@ -33,6 +33,7 @@ function App() {
                         <Route path={"/tools"} element={<Tools/>}/>
                         <Route path={"/resources"} element={<Resources/>}/>
                         <Route path={"/snake"} element={<Snake/>}/>
+                        <Route path={"/nav2"} element={<StaticNavBar2/>}/>
                     </Routes>
                 </Router>
             </div>
