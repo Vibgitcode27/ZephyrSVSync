@@ -52,7 +52,7 @@ app.post('/saveDetails', async (req, res) => {
 });
 
 app.get('/getDetails',async(req,res)=>{
-    const { email } = req.body;
+    const { email } = req.headers;
     const user = await UserDetails.findOne({ email });
     res.status(200).json(user);
 });

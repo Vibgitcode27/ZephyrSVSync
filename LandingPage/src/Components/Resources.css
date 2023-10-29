@@ -1,0 +1,36 @@
+.app-bar {
+    background-color: #24292e; /* GitHub dark background color */
+}
+
+.resources-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.coming-soon-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #f6f8fa; /* GitHub light background color */
+    border-radius: 8px;
+    text-align: center;
+}
+
+List {
+    padding: 0;
+}
+
+ListItem {
+    margin-bottom: 10px;
+}
+
+Link {
+    color: #0366d6; /* GitHub link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+Link:hover {
+    text-decoration: underline;
+}

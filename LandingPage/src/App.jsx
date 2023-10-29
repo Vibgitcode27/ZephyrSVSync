@@ -10,6 +10,8 @@ import DataFill from "./Components/DataFill.jsx";
 import Dashboard from "./Components/Dashboard.jsx";
 import ForestFarmer from "./Components/ForestFarmer.jsx";
 import Loading from "./Components/Loading.jsx";
+import Tools from "./Components/Tools.jsx";
+import Resources from "./Components/Resources.jsx";
 
 function App() {
 
@@ -26,6 +28,8 @@ function App() {
                         <Route path={"/dashboard"} element={<Dashboard/>}/>
                         <Route path={"/forest"} element={<ForestFarmer/>}/>
                         <Route path={"/loading"} element={<Loading/>}/>
+                        <Route path={"/tools"} element={<Tools/>}/>
+                        <Route path={"/resources"} element={<Resources/>}/>
                     </Routes>
                 </Router>
             </div>

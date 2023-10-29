@@ -35,6 +35,7 @@
     "react-intersection-observer": "^9.5.2",
     "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.17.0",
+    "react-window": "^1.8.9",
     "reactdom": "^2.0.0",
     "recoil": "^0.7.7",
     "three": "^0.157.0",

@@ -2,13 +2,44 @@ import { StaticNavBar } from "./Navbar.jsx";
 import {useState} from "react";
 
 const Loading = () => {
-    const [mail,setMail] = useState('');
+    const [mail, setMail] = useState('');
+    const [clickCount, setClickCount] = useState(0);
+
     function getValue() {
         var emailInput = document.getElementById('emailInput');
         var emailValue = emailInput.value;
         setMail(emailValue);
-    }
+        localStorage.setItem('email', emailValue);
+        const headers = new Headers({
+            'email': mail,
+        });
 
+        fetch("http://localhost:5003/getDetails", {
+            method: 'GET',
+            headers: headers,
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Data:', data);
+                if (clickCount === 1) {
+                    if (data === null) {
+                        window.location.href = "/DataFill";
+                    } else {
+                        localStorage.setItem('username', data.username);
+                        window.location.href = "/dashboard";
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
+        setClickCount(prevCount => prevCount + 1);
+    }
 
 
     return (
