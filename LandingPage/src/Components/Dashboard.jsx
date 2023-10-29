@@ -28,6 +28,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { FixedSizeList } from 'react-window';
 import {StaticNavBar} from "./Navbar.jsx";
 import Avatar from "@mui/material/Avatar";
+import {StaticNavBar2} from "./Navbar2.jsx";
 
 const Dashboard = () => {
     const [theme, colorMode] = useMode();
@@ -51,6 +52,26 @@ const Dashboard = () => {
         );
     }
 
+    const [repos, setRepos] = useState([]);
+
+    useEffect(() => {
+        const fetchRepos = async () => {
+            try {
+                const response = await axios.get('http://localhost:5007/repos', {
+                    headers: {
+                        'gitHub-username': name,
+                    },
+                });
+
+                setRepos(response.data);
+                console.log(response.data);
+            } catch (error) {
+                console.error('Error fetching repos:', error.message);
+            }
+        };
+
+        fetchRepos();
+    }, []);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,38 +83,27 @@ const Dashboard = () => {
                     }
                 };
 
-                axios.post('http://localhost:5006/data', {}, options)
-                    .then((res) => {
-                        console.log(res.data);
-                        setForks(res.data.forks);
-                        setStars(res.data.stars);
-                        const githubResponse = axios.get(`https://api.github.com/users/${name}`);
-                        console.log(githubResponse.data.followers)
-                        setFollowers(githubResponse.data.followers);
-                        console.log(githubResponse.data.following)
-                        setFollowing(githubResponse.data.following);
-                    })
-                    .catch((err) => {
-                        console.log("ERROR: ====", err);
-                    })
+                const dataResponse = await axios.post('http://localhost:5006/data', {}, options);
+                console.log(dataResponse.data);
+                setForks(dataResponse.data.forks);
+                setStars(dataResponse.data.stars);
+
+                const githubResponse = await axios.get(`https://api.github.com/users/${name}`);
+                console.log(githubResponse.data.followers);
+                setFollowers(githubResponse.data.followers);
+                console.log(githubResponse.data.following);
+                setFollowing(githubResponse.data.following);
             } catch (error) {
                 console.error('Error:', error.message);
             }
         };
+
         fetchData();
     }, []);
 
     return (
         <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Avatar alt="Remy Sharp" src="src\assets\logo.jpg" />
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, marginLeft: 1 }}>
-                        GITBIT
-                    </Typography>
-                    <Avatar alt="Remy Sharp" src="src\assets\avatar.jpg" style={{ marginRight: 2, marginTop: 1.5, borderRadius: "30px", border: "2px solid grey" }} />
-                </Toolbar>
-            </AppBar>
+            <StaticNavBar2></StaticNavBar2>
             <ColorModeContext.Provider value={colorMode}>
                 <ThemeProvider theme={theme}>
                     <CssBaseline />
@@ -128,7 +138,7 @@ const Dashboard = () => {
                                 justifyContent="center"
                             >
                                 <Typography style={{marginLeft : "-10vh" , marginTop : "-13vh"}}>Total Forks</Typography>
-                                <h1 style={{marginLeft : "5vh" , color : "Black" , fontSize : "7vh"}}>{fork}</h1>
+                                <h1 style={{marginLeft : "5vh" , color : "White" , fontSize : "7vh"}}>{fork}</h1>
                                 <div style={{}}>
                                     <h1><ForkLeftIcon style={{fontSize : "6vh"  , position : "relative" , left : "10vh" , top : "-3vh"}}></ForkLeftIcon></h1>
                                 </div>
@@ -141,7 +151,7 @@ const Dashboard = () => {
                                 justifyContent="center"
                             >
                                 <Typography style={{marginLeft : "-10vh" , marginTop : "-13vh"}}> Total Stars</Typography>
-                                <h1 style={{marginLeft : "5vh" , color : "Black" , fontSize : "7vh"}}>{stars}</h1>
+                                <h1 style={{marginLeft : "5vh" , color : "White" , fontSize : "7vh"}}>{stars}</h1>
                                 <div style={{}}>
                                     <h1><StarIcon style={{fontSize : "6vh"  , position : "relative" , left : "10vh" , top : "-3vh"}}></StarIcon></h1>
                                 </div>
@@ -154,7 +164,7 @@ const Dashboard = () => {
                                 justifyContent="center"
                             >
                                 <Typography style={{marginLeft : "-10vh" , marginTop : "-13vh"}}> Total Followers</Typography>
-                                <h1 style={{marginLeft : "5vh" , color : "Black" , fontSize : "7vh"}}>{followers}</h1>
+                                <h1 style={{marginLeft : "5vh" , color : "White" , fontSize : "7vh"}}>{followers}</h1>
                                 <div style={{}}>
                                     <h1><PeopleIcon style={{fontSize : "6vh"  , position : "relative" , left : "10vh" , top : "-3vh"}}></PeopleIcon></h1>
                                 </div>
@@ -167,7 +177,7 @@ const Dashboard = () => {
                                 justifyContent="center"
                             >
                                 <Typography style={{marginLeft : "-10vh" , marginTop : "-13vh"}}>Following</Typography>
-                                <h1 style={{marginLeft : "5vh" , color : "Black" , fontSize : "7vh"}}>{following}</h1>
+                                <h1 style={{marginLeft : "5vh" , color : "White" , fontSize : "7vh"}}>{following}</h1>
                                 <div style={{}}>
                                     <h1><PeopleIcon style={{fontSize : "6vh"  , position : "relative" , left : "10vh" , top : "-3vh"}}></PeopleIcon></h1>
                                 </div>
@@ -189,15 +199,14 @@ const Dashboard = () => {
                                         <h1 style={{paddingBottom : "0.5vh"}}>Top 15 repos</h1>
                                         <Box
                                             sx={{ marginTop : "-3.5vh" ,  width: '100%', height: 300, maxWidth: 1100 }}>
-                                            <FixedSizeList
-                                                height={250}
-                                                width={930}
-                                                itemSize={46}
-                                                itemCount={200}
-                                                overscanCount={5}
-                                            >
-                                                {renderRow}
-                                            </FixedSizeList>
+                                            <ul style={{
+                                                overflow: 'scroll',
+                                                width: '90vh'
+                                            }}>
+                                                {repos.map((item) => (
+                                                    <li key={item}>{item}</li>
+                                                ))}
+                                            </ul>
                                         </Box>
                                     </div>
                                 </Box>
@@ -210,24 +219,8 @@ const Dashboard = () => {
                                 backgroundColor={colors.primary[400]}
                                 overflow="auto"
                             >
-                                <div style={{marginTop : "-1.5vh"}}>
-                                    <h1 style={{paddingBottom : "0.5vh"}}>Recent Forks</h1>
-                                    <Box
-                                        sx={{ marginTop : "-1.5vh" ,  width: '100%', height: 240, maxWidth: 480 }}>
-                                        <FixedSizeList
-                                            height={240}
-                                            width={480}
-                                            itemSize={46}
-                                            itemCount={200}
-                                            overscanCount={5}
-                                        >
-                                            {renderRow}
-                                        </FixedSizeList>
-                                    </Box>
-                                </div>
+                                <img src={`https://github-readme-stats.vercel.app/api?username=${name}&theme=github_dark&show_icons=true`} alt="" />
                             </Box>
-
-                            {followers}
                             <Box
                                 gridColumn="span 4"
                                 gridRow="span 2"
@@ -247,7 +240,7 @@ const Dashboard = () => {
                                         variant="h5"
                                         color={colors.greenAccent[500]}
                                     >
-                                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=donut&theme=prussian" alt="Top Languages Card" />
+                                        <img src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${name}&layout=donut&theme=prussian`} alt="Top Languages Card" />
                                     </Typography>
                                 </Box>
                             </Box>
@@ -261,45 +254,10 @@ const Dashboard = () => {
                                     fontWeight="600"
                                     sx={{ padding: "30px 30px 0 30px" }}
                                 >
-                                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=donut&theme=holi" alt="Top Languages Card" />
+                                    <img src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${name}&layout=donut&theme=holi`} alt="Top Languages Card" />
                                 </Typography>
-                                <Box height="250px" mt="-20px">
+                                <Box height="10px" mt="-20px">
                                 </Box>
-                            </Box>
-                        </Box>
-                        
-                        <Box
-                            gridColumn="span 4"
-                            gridRow="span 2"
-                            backgroundColor={colors.primary[400]}
-                        >
-                            <Typography variant="h5" fontWeight="600" margin={{marginTop : "3vh" , marginLeft : "2vh"}}>
-                                Most Used Languages
-                            </Typography>
-                            <Typography
-                                variant="h5"
-                                fontWeight="600"
-                                sx={{ padding: "30px 30px 0 30px" }}
-                            >
-                                <img style={{width : "55vh" , marginTop : "5vh"}} src="https://github-readme-stats.vercel.app/api?username=anuraghazra&theme=github_dark&show_icons=true" alt="" />
-                            </Typography>
-                            <Box height="250px" mt="-20px">
-                            </Box>
-                        </Box>
-                        <Box
-                            gridColumn="span 4"
-                            gridRow="span 2"
-                            backgroundColor={colors.primary[400]}
-                            padding="30px"
-                        >
-                            <Typography
-                                variant="h5"
-                                fontWeight="600"
-                                sx={{ marginBottom: "15px" }}
-                            >
-                                DATA 3
-                            </Typography>
-                            <Box height="200px">
                             </Box>
                         </Box>
                     </Box>
